@@ -176,7 +176,7 @@ class Tic_Tac_Toe_Game{
 			}else if(cpuposition.containsAll(l)){
 				return "PLAYER 2 WON THE GAME";
 			}else	if(userposition.size() + cpuposition.size() == 9){
-				return "It's a Draw";	
+				return "It's  Draw";	
 			}
 		}
 		return "";

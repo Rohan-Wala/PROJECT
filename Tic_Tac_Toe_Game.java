@@ -24,6 +24,8 @@ class Tic_Tac_Toe_Game{
 		while(true){
 			
 			Scanner sc = new Scanner(System.in);
+			
+			System.out.println("PLAYER 1");
 			System.out.println("Enter the position between 1-9");
 			int userPo = sc.nextInt();
 			
@@ -45,13 +47,30 @@ class Tic_Tac_Toe_Game{
 				System.out.println(result);
 				break;
 			}
-			Random rand = new Random();
-			int cpupo = rand.nextInt(9)+1;// till 9 ,+1 indecate starting value
-			while(cpuposition.contains(cpupo) || userposition.contains(cpupo)){
-				cpupo = rand.nextInt(9)+1;
+			//Played by cpu
+			// Random rand = new Random
+			// int cpupo = rand.nextInt(9)+1;// till 9 ,+1 indecate starting value
+			// while(cpuposition.contains(cpupo) || userposition.contains(cpupo)){
+				// cpupo = rand.nextInt(9)+1;
+			// }
+			
+			//played by 2 player
+			System.out.println("PLAYER 2");
+			System.out.println("Enter the position between 1-9");
+			int player2 = sc.nextInt();
+			
+			if(player2 < 1 || player2 > 9){
+				System.out.println("The position is out of range");
+				System.out.println("please enter the position between 1-9");
+				player2 = sc.nextInt();
 			}
 			
-			mark(gameBoard,cpupo,"cpu");
+			
+			while(cpuposition.contains(player2) || userposition.contains(player2)){
+				player2 = sc.nextInt();
+			}
+			
+			mark(gameBoard,player2,"cpu");
 			
 			result = WhoIsWineer();
 			
@@ -153,9 +172,9 @@ class Tic_Tac_Toe_Game{
 		
 		for(List l:wineer){
 			if(userposition.containsAll(l)){
-				return "You won the game";
+				return "PLAYER 1 WON THE GAME";
 			}else if(cpuposition.containsAll(l)){
-				return "You loss the game ";
+				return "PLAYER 2 WON THE GAME";
 			}else	if(userposition.size() + cpuposition.size() == 9){
 				return "It's a Draw";	
 			}

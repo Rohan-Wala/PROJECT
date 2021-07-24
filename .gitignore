@@ -1,5 +1,5 @@
 .settings
 *.log
-/bin
+*bin
 .metadata
 *.class

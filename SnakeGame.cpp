@@ -11,7 +11,7 @@ int tailx[100],taily[100];
 //to store the position of tail body 
 //which will be used while moving the snake
 int ntail; // length of snake
-enum eDirection { STOP = 0, LEFT,RIGHT,UP,DOWN};
+enum eDirection {STOP = 0,LEFT,RIGHT,UP,DOWN};
 eDirection dir;//direction of snake
 
 
@@ -42,6 +42,7 @@ void Draw(){
 		for(int j=0;j<width;j++){
 			if(j==0)
 				cout<<'#';
+				
 			if(i == y && j == x)
 				cout<<"O"; 
 			else if(i == fruity && j == fruitx)

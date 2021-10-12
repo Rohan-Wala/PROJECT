@@ -133,11 +133,13 @@ void Logic(){
 	if(x >= width) x = 0; else if(x < 0) x = width;
 	if(y >= height) y = 0; else if(y < 0) y = height;
 */
+	// hit own body
 	for(int i=0; i<ntail; i++){
 		if(tailx[i] == x && taily[i] == y)
 			gameover = true;
 	}
-		
+	
+	//eat the fruit	
 	if(x == fruitx && y == fruity){
 		score++;
 		fruity = rand() % height;

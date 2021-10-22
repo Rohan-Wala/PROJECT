@@ -122,9 +122,6 @@ void Logic(){
 		case DOWN:
 			y++;
 			break;
-		default:
-			break;
-		
 	}
 	if(x > width || x < 0||y > height || y <0)
 		gameover = true;

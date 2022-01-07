@@ -46,13 +46,13 @@ void Draw(){
 			if(i == y && j == x)
 				cout<<"O"; 
 			else if(i == fruity && j == fruitx)
-				cout<<'F';
+				cout<<'$';
 			else 
 			{
 				bool print = false;
 				for(int k=0; k<ntail ;k++){
 					if(tailx[k] == j && taily[k] == i){
-						cout<<'o';
+						cout<<'.';
 						print = true;
 					}
 				}
@@ -128,14 +128,14 @@ void Logic(){
 
 /* not hitting the wall
 	if(x >= width) x = 0; else if(x < 0) x = width;
-	if(y >= height) y = 0; else if(y < 0) y = height;
+	if(y >= height) y = 0; else if(y <= 0) y = height;
 */
 	// hit own body
 	for(int i=0; i<ntail; i++){
 		if(tailx[i] == x && taily[i] == y)
 			gameover = true;
 	}
-	
+	s
 	//eat the fruit	
 	if(x == fruitx && y == fruity){
 		score++;
@@ -152,7 +152,7 @@ int main(){
 		Draw();
 		Input();
 		Logic();
-		Sleep(20);
+		Sleep(30);
 	}
 	return 0;
 }
